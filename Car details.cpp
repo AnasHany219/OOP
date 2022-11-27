@@ -1,28 +1,27 @@
 #include <iostream>
-#include <cstring>
-#include <algorithm>
+#include <cstring>              // For strings
 using namespace std;
 
 class car{
 private:
-    char name[15];
-    char color[10];
-    int maxspeed;
-    int model;
+    char name[15];              // For Car_Name
+    char color[10];             // For Car_Color
+    int maxspeed;               // For Car_Speed
+    int model;                  // For Car_Model
 public:
-    void setName(char n[])
+    void setName(char n[])      // For Insert_Name
     {
         strcpy(name, n);
     }
-    void setColor(char n[])
+    void setColor(char n[])     // For Insert_Color
     {
         strcpy(color, n);
     }
-    void setMaxSpeed(int m)
+    void setMaxSpeed(int m)     // For Insert_Speed
     {
         maxspeed = m;
     }
-    void setModel(int m)
+    void setModel(int m)        // For Insert_Models
     {
         model = m;
     }
@@ -42,7 +41,8 @@ public:
     {
         return model;
     }
-    void print()
+    //Display Derails
+    void print()        
     {
         cout << "Name      = " << getName()     << "\n"
              << "color     = " << getColor()    << "\n"
