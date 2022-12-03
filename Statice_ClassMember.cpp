@@ -13,7 +13,7 @@ public:
         strcpy(name, "No Name");
         ID = 0;
         first = second = fianl = 0;
-    // Initial value for count is outside the calss
+    // Initial value for count is outside the class
         count++;
         cout << "Numbers of Students constructor = " << count << "\n";
     }
