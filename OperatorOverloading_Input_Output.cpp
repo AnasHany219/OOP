@@ -13,12 +13,12 @@ public:
     friend istream &operator >> (istream &input, Distance &d);
     friend ostream &operator << (ostream &output, Distance &d);
 };
-// Friend Function for input the feet ind inches
+// Friend Function for input the feet and inches
 istream &operator >> (istream &input, Distance &d){
     input >> d.feet >> d.inches;
     return input;
 }
-// Friend Function for input the feet ind inches
+// Friend Function for output the feet and inches
 ostream &operator << (ostream &output, Distance &d){
     output << "Feet = " << d.feet << ", Inches = " << d.inches << "\n";
     return output;
