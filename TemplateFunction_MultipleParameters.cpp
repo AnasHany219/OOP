@@ -17,7 +17,7 @@ int main()
 // The Second Solution
     cout << smaller<double>(y, x) << "\n";  //Write data type for the function
     
-// The Third Solution is auto function like as : auto smaller(auto x, auto y)
+// The Third Solution is auto function like as : auto smaller(auto x, auto y){}
     return 0;
 }
 //  End of the main
