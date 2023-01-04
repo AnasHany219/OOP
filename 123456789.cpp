@@ -1,28 +1,29 @@
 #include <iostream>
+#include <cstring>
 using namespace std;
-class Circle{
+
+class employee{
 private:
-    double radius;
-    string color;
+    char employee_name[20];
+    int employee_salary;
 public:
-    Circle(){
-        radius = 1.0;
-        color = "red";
+    employee(){
+        strcpy(employee_name, "NoName");
+        employee_salary = 0;
     }
-    void getRadius(double r){
-        radius = r;
+    void accept(char n[], int s){
+        strcpy(employee_name, n);
+        employee_salary = s;
     }
-    void getColor(string c){
-        color = c;
-    }
-    void getArea(){
-        cout << 22 / 7 * radius * radius << "\n";
+    void display(){
+        cout << "Name: " << employee_name
+             << ", Salary: " << employee_salary
+             << "\n";
     }
 };
 int main(){
-    Circle Ci;
-    Ci.getRadius(7);
-    Ci.getColor("Black");
-    Ci.getArea();       // 147
+    employee em;
+    em.accept("Anas", 12000);
+    em.display();
     return 0;
 }
