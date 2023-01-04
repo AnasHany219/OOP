@@ -2,17 +2,14 @@
 using namespace std;
 
 int main(){
-    for(int t = -20; t <= 20; t++){
-        if(t >= 0){
-            cout << "t = " << t
-                 << ", y(t) = " << -3 * t * t + 5
-                 << "\n";
-        }
-        else{
-            cout << "t = " << t
-                 << ", y(t) = " << 3 * t * t + 5
-                 << "\n";
-        }
-    }
+    int HH = 0, MM = 0, SS = 0;
+    cout << "Enter Hours: ";        cin >> HH;
+    cout << "Enter Minutes: ";      cin >> MM;
+    cout << "Enter Seconds: ";      cin >> SS;
+
+    MM += HH*60;
+    SS += MM*60;
+
+    cout << "Total Seconds: " << SS;
     return 0;
 }
