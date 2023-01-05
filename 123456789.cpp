@@ -2,35 +2,53 @@
 #include <cstring>
 using namespace std;
 
-class Distance{
+class Rectangle{
 private:
-    int feet;
-    int inch;
+    float width, length;
 public:
-    Distance(){
-        feet = inch = 0;
+    Rectangle(){
+        width = length = 1;
     }
-    Distance(int f, int i){
-        feet = f;
-        inch = i;
+    void area(){
+        cout << "Area = " << width * length << "\n";
     }
-    int getFeet(){
-        return feet + inch / 12;
+    void Set_Width(int w){
+        if(w < 0.0)
+            throw "Width Less than 0.0";
+        else if(w >= 100.0)
+            throw "Width larger than 100.0";
+        else
+            width = w;
     }
-    void display(){
-        cout << "Distance = "
-             << feet << " feet, "
-             << inch << " inch\n";
+    int Get_Width(){
+        return width;
+    }
+    void Set_Length(int l){
+        if(l < 0.0)
+            throw "Length Less than 0.0";
+        else if(l >= 100.0)
+            throw "Length Larger than 100.0";
+        else
+            length = l;
+    }
+    int Get_Length(){
+        return length;
     }
 };
-string minDist(Distance D1, Distance D2){
-    int feet1 = D1.getFeet();
-    int feet2 = D2.getFeet();
-
-    return (feet1 >= feet2? "D1" : "D2");
-}
 int main(){
-    Distance D1(10, 15), D2(15, 10);
-    cout << minDist(D1, D2);    // D2
+    int x;
+    Rectangle R;
+    try{
+        cout << "Enter Width: ";
+        cin >> x;
+        R.Set_Width(x);
+        cout << "Enter Length: ";
+        cin >> x;
+        R.Set_Length(x);
+    }
+    catch(const char * str){
+        cout << "Exception: " << str;
+    }
+    R.area();
     return 0;
 }
