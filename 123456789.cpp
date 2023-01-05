@@ -2,28 +2,35 @@
 #include <cstring>
 using namespace std;
 
-class employee{
+class Distance{
 private:
-    char employee_name[20];
-    int employee_salary;
+    int feet;
+    int inch;
 public:
-    employee(){
-        strcpy(employee_name, "NoName");
-        employee_salary = 0;
+    Distance(){
+        feet = inch = 0;
     }
-    void accept(char n[], int s){
-        strcpy(employee_name, n);
-        employee_salary = s;
+    Distance(int f, int i){
+        feet = f;
+        inch = i;
+    }
+    int getFeet(){
+        return feet + inch / 12;
     }
     void display(){
-        cout << "Name: " << employee_name
-             << ", Salary: " << employee_salary
-             << "\n";
+        cout << "Distance = "
+             << feet << " feet, "
+             << inch << " inch\n";
     }
 };
+string minDist(Distance D1, Distance D2){
+    int feet1 = D1.getFeet();
+    int feet2 = D2.getFeet();
+
+    return (feet1 >= feet2? "D1" : "D2");
+}
 int main(){
-    employee em;
-    em.accept("Anas", 12000);
-    em.display();
+    Distance D1(10, 15), D2(15, 10);
+    cout << minDist(D1, D2);    // D2
     return 0;
 }
